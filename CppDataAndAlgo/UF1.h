@@ -5,11 +5,12 @@
  *      Author: vsirvent
  */
 
-#ifndef UF_H_
-#define UF_H_
+#ifndef UF1_H_
+#define UF1_H_
 
 #include <unordered_map>
 #include <unordered_set>
+#include "IUF.h"
 
 using namespace std;
 /**
@@ -23,7 +24,7 @@ using namespace std;
  * - network hash_map to fast access to ids by network and avoid
  *   iterate ids.
  */
-class UF1 {
+class UF1: public IUF {
 private:
 	std::unordered_map<int /*node*/, int /*network*/> ids;
 	std::unordered_map<int /*network*/, unordered_set<int> /*nodes*/ > network;
@@ -74,4 +75,4 @@ public:
 	}
 };
 
-#endif /* UF_H_ */
+#endif /* UF1_H_ */
